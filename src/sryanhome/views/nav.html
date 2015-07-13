@@ -1,7 +1,35 @@
+<div id="div_logo">
+	<!--p id="p_logo">Sryan's home</p-->
+	<!--img src="static/img/logo.jpg" /-->
+</div>
 <div id="div_nav" align="center">
-   <ul id="nav"> 
-  	<li id="nav_logo">1111111111</li>
-    <li><a href="/">首页</a></li> 
-    <li><a href="/about">关于</a></li> 
+	<ul id="nav"> 
+		<li><img id="img_logo" src="static/img/logo.jpg" height=30/></li>
+		<li><a href="/">首页</a></li> 
+		<li><a href="#">BackMIR</a>
+			<ul class="sub_nav">
+				<li><a href="#">简介</a></li>
+				<li><a href="#">下载</a></li>
+			</ul>
+		</li>
+		<li><a href="/about">关于</a></li> 
 	</ul> 
+	
+	<!--nav script-->
+	<script type="text/javascript">
+		$("#nav li").mouseover(function(e){
+			var ul = $(this).find("ul");
+			if(!ul.is(":animated")){
+				ul.slideDown();
+			}else{
+				//	结束动画 再下拉
+				ul.stop(true, true).slideToggle();
+				ul.slideDown();
+			}
+		});
+		$("#nav li").mouseleave(function(e){
+				var ul = $(this).find("ul");
+				ul.slideUp();
+			});
+	</script>
 </div>
